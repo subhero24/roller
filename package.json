@@ -20,11 +20,11 @@
 		"rollup-plugin-terser": "^4.0.4"
 	},
 	"devDependencies": {
-		"esm": "^3.2.7"
+		"esm": "^3.2.7",
+		"roller": "https://github.com/subhero24/roller.git"
 	},
 	"scripts": {
-		"build": "node -r esm index.js",
-		"develop": "node -r esm index.js --watch",
-		"prepublish": "yarn run build"
+		"build": "roller",
+		"develop": "roller --watch"
 	}
 }
