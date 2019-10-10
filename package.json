@@ -21,7 +21,7 @@
 	},
 	"devDependencies": {
 		"esm": "^3.2.7",
-		"roller": "https://github.com/subhero24/roller.git"
+		"roller": "https://github.com/subhero24/roller.git#semver:0.1.0"
 	},
 	"scripts": {
 		"build": "roller",
