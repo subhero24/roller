@@ -75,12 +75,18 @@ let run = async () => {
 		let file = pkg[prop];
 		if (file == undefined) continue;
 
-		output.push({
-			file,
-			format: types[prop],
-			banner: executables.includes(file) && SHEBANG,
-			sourcemap: true,
-		});
+		if (input.input === file) {
+			throw new Error(
+				`Output file "${file}" is the same as input file. This would override your input file, please specify another input or output file.`,
+			);
+		} else {
+			output.push({
+				file,
+				format: types[prop],
+				banner: executables.includes(file) && SHEBANG,
+				sourcemap: true,
+			});
+		}
 	}
 
 	if (args.watch) {

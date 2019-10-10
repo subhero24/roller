@@ -1,6 +1,6 @@
 {
 	"name": "roller",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Zero config rollup bundler",
 	"main": "dist/index.js",
 	"author": "Bruno Van Damme",
