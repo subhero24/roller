@@ -1,0 +1,41 @@
+{
+	"env": {
+		"es6": true,
+		"node": true,
+		"browser": true
+	},
+	"extends": ["eslint:recommended"],
+	"globals": {
+		"Atomics": "readonly",
+		"SharedArrayBuffer": "readonly"
+	},
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaVersion": 2018
+	},
+
+	"rules": {
+		"getter-return": "warn",
+		"no-empty": "off",
+		"no-console": "warn",
+		"no-debugger": "warn",
+		"no-unused-vars": [
+			"warn",
+			{
+				"ignoreRestSiblings": true
+			}
+		],
+		"no-useless-catch": "warn",
+		"no-constant-condition": "off",
+		"indent": [
+			"warn",
+			"tab",
+			{
+				"SwitchCase": 1
+			}
+		],
+		"arrow-parens": ["warn", "as-needed"],
+		"linebreak-style": ["error", "unix"]
+	}
+}
