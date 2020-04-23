@@ -13,10 +13,12 @@ import localResolvePlugin from 'rollup-plugin-local-resolve';
 
 const SHEBANG = '#!/usr/bin/env node';
 
-let args = Minimist(process.argv, {
+let args = Minimist(process.argv.slice(2), {
 	alias: { w: 'watch' },
 	default: { watch: false },
 });
+
+let source = args._[0];
 
 let pkg = Filesystem.readJSONSync('package.json');
 let bundleExternals = () => {
@@ -66,7 +68,7 @@ let bundlePlugins = () => {
 
 let run = async () => {
 	let input = {
-		input: pkg.source,
+		input: source != undefined ? source : pkg.source,
 		plugins: bundlePlugins(),
 		external: bundleExternals(),
 	};
